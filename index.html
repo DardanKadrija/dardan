@@ -471,6 +471,99 @@
             background: var(--accent-dim);
         }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+        }
+
+        .project-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .project-highlights li {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        .project-highlights li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-chip {
+            padding: 0.4rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
         /* Education Section */
         .education-grid {
             display: grid;
@@ -656,6 +749,7 @@
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -795,6 +889,39 @@
                     <h3 class="timeline-role">Full Stack Developer Intern</h3>
                     <p class="timeline-desc">Contributed to MEAN-stack internal tools; explored Redis caching.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <div class="section-header">
+                <p class="section-label">// Projects</p>
+                <h2 class="section-title">Selected Work</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3 class="project-title">Lajme Kosova</h3>
+                    <p class="project-desc">
+                        A Kosovo news aggregation platform that parses RSS feeds from 7 local sources, removes duplicates
+                        with Jaccard similarity, and serves fast updates with smart caching.
+                    </p>
+                    <ul class="project-highlights">
+                        <li>Breaking news ticker, category filters, and full-text search</li>
+                        <li>Per-article pages with related news and source filtering</li>
+                        <li>Dark/light theme with responsive, minimal UI</li>
+                    </ul>
+                    <div class="project-meta">
+                        <span class="project-chip">Next.js 14</span>
+                        <span class="project-chip">TypeScript</span>
+                        <span class="project-chip">Tailwind CSS</span>
+                        <span class="project-chip">rss-parser</span>
+                        <span class="project-chip">cheerio</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://lajmekosove.com" target="_blank" rel="noreferrer">
+                            Live Site
+                        </a>
+                    </div>
+                </article>
             </div>
         </section>
 
